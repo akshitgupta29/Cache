@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class DBConnectivityTesting {
 
-	
+	//heelo
 	@Test
 	public void testCloseConnection() 
 	{
