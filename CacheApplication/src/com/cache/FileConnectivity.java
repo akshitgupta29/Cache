@@ -9,39 +9,7 @@ public class FileConnectivity implements Store
 		//File = new File
 	}
 
-	@Override
-	public void read(List<String> key) {
-		// TODO Auto-generated method stub
-		System.out.println("in file READ");
-		
-	}
 
-	@Override
-	public void remove(List<String> key) {
-		// TODO Auto-generated method stub
-		System.out.println("in file remove");
-		
-	}
-
-	@Override
-	public void insert(String key, String value) {
-		// TODO Auto-generated method stub
-		System.out.println("in file isnert");
-	}
-
-	@Override
-	public void update(String key, String value) {
-		// TODO Auto-generated method stub
-		System.out.println("in file update");
-		
-	}
-
-
-	@Override
-	public void connection() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void closeConnection() {
