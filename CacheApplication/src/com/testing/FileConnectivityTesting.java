@@ -6,7 +6,8 @@ import org.junit.Test;
 
 public class FileConnectivityTesting {
 
-	//hello
+	//hello test
+	
 	@Test
 	public void testCreateFile() {
 		fail("Not yet implemented");
