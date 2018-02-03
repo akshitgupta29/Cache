@@ -16,13 +16,22 @@ public  class DBConnectivity implements Store
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 	@Override
-	public void closeConnection() {
+	public void closeConnection() 
+	{
 		// TODO Auto-generated method stub
-		System.out.println("in DB close");
+		// System.out.println("in DB close");
+		try 
+		{
+			con.close();
+		} 
+		catch (SQLException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
-	
 	@Override
 	public boolean openconnection() 
 	{
@@ -44,9 +53,34 @@ public  class DBConnectivity implements Store
 	public boolean insert(String key, String value) 
 	{
 		// TODO Auto-generated method stub
-		
-		
+		int flag = 0;
+		String skey = key ;
+		String svalue = value;
+			try
+			{
+				String query = "insert into cachedata values (?, ?);";
+				stmt = con.prepareStatement(query);
+				stmt.setString(2, svalue);
+				stmt.setString(1, skey);
+				flag = stmt.executeUpdate();
+				
+			}
+			catch (Exception e) 
+			{
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			if (flag == 0)
+			{
+				System.out.println(skey + " index value is not inserted with " + svalue);
+				return false;
+			}
+			if (flag==1)
+			{
+				System.out.println(skey + " index value is inserted with " + svalue);
+			}
 		return true;
+		
 	}
 
 	@Override
@@ -80,15 +114,72 @@ public  class DBConnectivity implements Store
 	}
 
 	@Override
-	public boolean update(String key, String value) {
+	public boolean update(String key, String value) 
+	{
 		// TODO Auto-generated method stub
-		return false;
+		int flag = 0;
+		String skey = key ;
+		String svalue = value;
+			try
+			{
+				String query = "update cachedata set valuefig = ? where keyfig = ?";
+				stmt = con.prepareStatement(query);
+				stmt.setString(1, svalue);
+				stmt.setString(2, skey);
+				flag = stmt.executeUpdate();
+				
+			}
+			catch (Exception e) 
+			{
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			if (flag == 0)
+			{
+				System.out.println(skey + " index value is not updated with " + svalue);
+				return false;
+			}
+			if (flag==1)
+			{
+				System.out.println(skey + " index value is updated with " + svalue);
+			}
+		return true;
 	}
 
 	@Override
-	public boolean remove(List<String> key) {
+	public boolean remove(List<String> key) 
+	{
 		// TODO Auto-generated method stub
-		return false;
+		int flag = 0;
+		//List<String> resultList = new ArrayList<String>();
+		ListIterator<String> itr = key.listIterator();
+		while (itr.hasNext()) //while the iterator has next available value
+		{
+			String s1 = itr.next();
+			try
+			{
+				String query = "delete from cachedata where keyfig = ?";
+				stmt = con.prepareStatement(query);
+				stmt.setString(1, s1);
+				flag = stmt.executeUpdate();
+				
+			}
+			catch (Exception e) 
+			{
+				// TODO: handle exception
+				e.printStackTrace();
+			}
+			if (flag == 0)
+			{
+				System.out.println(s1 + " index value is not deleted");
+				return false;
+			}
+			if (flag==1)
+			{
+				System.out.println(s1 + " index value has been deleted");
+			}
+		}
+		return true;
 	}
 	
 	

@@ -50,12 +50,52 @@ public class TestClass {
 		List<String> resultvaluelist = new ArrayList<>();
 		keylist.add("A");
 		keylist.add("B");
+		keylist.add("C");
+		
+		//ListIterator<String> itr = keylist.listIterator();
 		resultvaluelist = obj.read(keylist);
 		ListIterator<String> itr = resultvaluelist.listIterator();
 		while (itr.hasNext())
 		{
 			System.out.println(itr.next());
 		}
+		/* To check the working of the remove function.
+		boolean resultBool =  obj.remove(keylist);
+		if (resultBool)
+		{
+			System.out.println("true");
+		}
+		else
+		{
+			System.out.println("false");
+		}
+		*/
+		
+		//To check the working of the update function.
+//		boolean resultBool =  obj.update("B", "Abhinav");
+//		if (resultBool)
+//		{
+//			System.out.println("true");
+//		}
+//		else
+//		{
+//			System.out.println("false");
+//		}
+		
+		
+		//To check the working of the insert function.
+//				boolean resultBool =  obj.insert("C", "Shrestha");
+//				if (resultBool)
+//				{
+//					System.out.println("true");
+//				}
+//				else
+//				{
+//					System.out.println("false");
+//				}
+//						
+		
+		
 	}
 
 }

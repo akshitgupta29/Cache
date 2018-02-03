@@ -20,7 +20,8 @@ public class DBConnectivityTesting {
 	}
 
 	@Test
-	public void testOpenconnection() {
+	public void testOpenconnection() 
+	{
 		//fail("Not yet implemented");
 		//assertEquals(false, obj.openconnection());
 		
