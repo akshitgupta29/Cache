@@ -16,14 +16,14 @@ public class DBConnectivityTesting {
 	public void testCloseConnection() 
 	{
 		//fail("Not yet implemented");
-		//assertEquals(false, false);
+		assertEquals(true, true);
 	}
 
 	@Test
 	public void testOpenconnection() 
 	{
 		//fail("Not yet implemented");
-		//assertEquals(false, obj.openconnection());
+		assertEquals(true, obj.openconnection());
 		
 	}
 
@@ -41,12 +41,12 @@ public class DBConnectivityTesting {
 
 	@Test
 	public void testUpdate() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testRemove() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 }

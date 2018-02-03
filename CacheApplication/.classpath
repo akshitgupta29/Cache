@@ -3,8 +3,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/guptaksh/Downloads/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/guptaksh/Documents/SQL Connector/sqljdbc_6.2/enu/mssql-jdbc-6.2.2.jre8.jar"/>
-	<classpathentry kind="lib" path="C:/Users/guptaksh/Downloads/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="C:/mysqlstudents/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/guptaksh/Downloads/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
