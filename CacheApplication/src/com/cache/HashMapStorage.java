@@ -13,8 +13,8 @@ public class HashMapStorage implements Cache, CacheUtil
 	
 	//we can ask user where it wants to store
 	//if else
-	Store storedbobj = new DBConnectivity();
-	Store storefileobj = new FileConnectivity();
+//	Store storedbobj = new DBConnectivity();
+//	Store storefileobj = new FileConnectivity();
 		
 	
 	
@@ -59,8 +59,6 @@ public class HashMapStorage implements Cache, CacheUtil
 	@Override
 	public boolean removeCache(List<String> lst) 
 	{
-		// TODO Auto-generated method stub
-		//List<String> resultList = new ArrayList<String>();
 		ListIterator<String> itr = lst.listIterator();
 		while (itr.hasNext()) //while the iterator has next available value
 		{
@@ -68,13 +66,8 @@ public class HashMapStorage implements Cache, CacheUtil
 			String st = map.remove(s1);
 			System.out.println("the one removed is " +st);
 			boolean bool = map.containsValue(st);
-//			System.out.println(bool);
 			if (bool)
-			{
-				System.out.println("IN the bool");
-				return false;
-			}
-			//resultList.add(st);			
+				return false;			
 		}		
 		return true;
 	}
@@ -95,55 +88,22 @@ public class HashMapStorage implements Cache, CacheUtil
 					boolean bool = map.containsValue(keyValue);
 					if (!bool)
 						return false;
-					//storedbobj.insert(en.getKey(), (String)en.getValue());
-					//storefileobj.insert(en.getKey(), (String)en.getValue());
 				}
-				
-		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
-	public boolean updateCache(Map<String, ?> params) {
-		// TODO Auto-generated method stub
-				//map.put(params.getKey, value)
-				for (Map.Entry<String, ?> en : params.entrySet())
-				{
-					String keyString = en.getKey();
-					String keyValue = (String) en.getValue();
-					//boolean result = map.replace(keyString, keyValue) != null;
-					map.replace(keyString, keyValue);
-					boolean bool = map.containsValue(keyValue);
-					if (!bool)
-						return false;
-					
-//					if (result)
-//					{
-//						System.out.println("Updating the value in the Map");
-//						System.out.println("Key Value " + en.getKey() +" " + en.getValue());
-//						return true;
-//					}
-						
-//					if (map.containsKey(keyString))
-//					{
-//						map.put(map.get(params), map.get(params)+1);
-//					}
-//					else
-//					{
-//						map.put(keyString, keyValue);
-//					}
-					
-					
-					
-					
-					//storedbobj.update(en.getKey(), (String)en.getValue());
-//					storefileobj.update(en.getKey(), (String)en.getValue());
-				
-			//	storedbobj.update(null, null);
-				//storefileobj.update(null, null);
-				}
-				
-		// TODO Auto-generated method stub
+	public boolean updateCache(Map<String, ?> params) 
+	{
+		for (Map.Entry<String, ?> en : params.entrySet())
+		{
+			String keyString = en.getKey();
+			String keyValue = (String) en.getValue();
+			map.replace(keyString, keyValue);
+			boolean bool = map.containsValue(keyValue);
+			if (!bool)
+				return false;
+		}				
 		return true;
 				
 	}
