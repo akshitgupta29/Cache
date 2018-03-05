@@ -43,11 +43,16 @@ public class TestClass {
 	         if (stmt != null) try { stmt.close(); } catch(Exception e) {}  
 	         if (con != null) try { con.close(); } catch(Exception e) {}  
 	      } */
-		//DBConnectivity obj = new DBConnectivity();
-		HashMapStorage obj = new HashMapStorage(); 
+		DBConnectivity obj = new DBConnectivity();
+		HashMapStorage objhash = new HashMapStorage(); 
 		
-		//obj.openconnection();
-//		//obj.insert("a", "B");
+		obj.openconnection();
+		
+		CipherAES cis = new CipherAES();
+		cis.encrypt(strToEncrypt, secret_key);
+		
+		
+		obj.insert("a", "B");
 		//List<String> keylist = new ArrayList<>();
 		HashMap<String, String> keylist = new HashMap<>();
 //		List<String> resultvaluelist = new ArrayList<>();

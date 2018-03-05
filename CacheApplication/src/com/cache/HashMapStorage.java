@@ -115,7 +115,8 @@ public class HashMapStorage implements Cache, CacheUtil
 	}
 
 	@Override
-	public void clearCache() {
+	public void clearCache() 
+	{
 		// TODO Auto-generated method stub
 		
 	}
