@@ -49,10 +49,8 @@ public class TestClass {
 		obj.openconnection();
 		
 		CipherAES cis = new CipherAES();
-		cis.encrypt(strToEncrypt, secret_key);
-		
-		
-		obj.insert("a", "B");
+		String encypted = cis.encrypt("Akshit", "akshit");
+		obj.insert("a", encypted);
 		//List<String> keylist = new ArrayList<>();
 		HashMap<String, String> keylist = new HashMap<>();
 //		List<String> resultvaluelist = new ArrayList<>();
@@ -60,7 +58,7 @@ public class TestClass {
 		keylist.put("B", "Abhinav");
 		keylist.put("C", "Cow");		
 		
-		boolean resinsert = obj.insertCache(keylist);
+		boolean resinsert = objhash.insertCache(keylist);
 		System.out.println(resinsert);
 	
 		
@@ -70,7 +68,7 @@ public class TestClass {
 		//updateMap.put("A", "Akshit");
 		updateMap.put("B", "Shrestha");
 		updateMap.put("C", "Abhinav");
-		boolean result = obj.updateCache(updateMap);
+		boolean result = objhash.updateCache(updateMap);
 		if (result)
 			System.out.println("updated the value");
 		else
@@ -82,7 +80,7 @@ public class TestClass {
 		//List<String> resultvaluelist = new ArrayList<>();
 		lst1.add("C");
 		lst1.add("B");
-		boolean resremove = obj.removeCache(lst1);
+		boolean resremove = objhash.removeCache(lst1);
 		System.out.println(resremove);
 		
 		List<String> lst = new ArrayList<>();
@@ -96,7 +94,7 @@ public class TestClass {
 		
 		
 		
-		resultvaluelist = obj.readCache(lst);
+		resultvaluelist = objhash.readCache(lst);
 		ListIterator<String> itr = resultvaluelist.listIterator();
 		while (itr.hasNext())
 		{
